@@ -15,6 +15,7 @@ import base64
 from pbkdf2 import PBKDF2
 
 import binascii
+import glob
 
 BUILD_KEY = "dropbox"
 CLIENT_KEY_NAME = u'Client'
@@ -146,7 +147,7 @@ class DBKeyStore(object):
 
 
 # ---------------------------------------------
-appdata_path = os.path.expanduser(u'~/.%s/instance1' % BUILD_KEY.lower())
+appdata_path = glob.glob(os.path.expanduser(u'~/.%s/instance[0-9]*/config.dbx' % BUILD_KEY.lower()))[0][:-11]
 dbks = DBKeyStore(appdata_path)
 user_key = dbks.get_user_key()
 print "User key: ", binascii.hexlify( user_key[1] )
