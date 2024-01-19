@@ -7,7 +7,7 @@ This is based off the Linux [implementation](https://github.com/newsoft/dbx-keyg
 
 1. git clone git@github.com:dnicolson/dbx-keygen-macos.git
 2. cd dbx-keygen-macos
-3. pip2 install crypto pycrypto simplejson pbkdf2
+3. pip2 install pyyaml==5.3.1 crypto pycrypto simplejson pbkdf2
 4. python2 dbx-keygen-macos.py
 
 
